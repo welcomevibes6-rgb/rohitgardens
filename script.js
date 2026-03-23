@@ -43,6 +43,38 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 6000);
     }
 
+    // --- Mobile Hamburger Menu ---
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    const navLinks = document.querySelectorAll('.nav-menu li');
+
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', () => {
+            // Toggle Nav
+            navMenu.classList.toggle('nav-active');
+            
+            // Animate Links
+            navLinks.forEach((link, index) => {
+                if (link.style.animation) {
+                    link.style.animation = '';
+                } else {
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                }
+            });
+
+            // Hamburger Animation
+            hamburger.classList.toggle('toggle');
+        });
+
+        // Close menu when a link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('nav-active');
+                hamburger.classList.remove('toggle');
+            });
+        });
+    }
+
     // --- Navbar Scroll Effect ---
     window.addEventListener('scroll', () => {
         const nav = document.querySelector('.nav-wrapper');
