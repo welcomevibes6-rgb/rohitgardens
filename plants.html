@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Plants | Rohit Gardens</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .plant-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+        .plant-item {
+            transition: opacity 0.3s ease;
+        }
+        .btn-whatsapp-small {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--primary-green);
+            color: var(--white);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-top: 15px;
+            transition: var(--transition-smooth);
+        }
+        .btn-whatsapp-small:hover {
+            background: var(--primary-dark);
+            transform: scale(1.05);
+        }
+        .card-img-wrapper img {
+            object-fit: contain;
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="custom-cursor"></div>
+
+    <nav class="nav-wrapper">
+        <div class="logo-section">
+            <img src="image copy 49.png" alt="Logo" class="logo-img">
+            <span class="brand-name">Rohit Gardens</span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="plants.html" class="active">Our Plants</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <a href="contact.html" class="btn-quote">Get a Quote</a>
+    </nav>
+
+    <header class="page-banner">
+        <div class="banner-bg"></div>
+        <div class="banner-content">
+            <h1 class="banner-title">Our Plants</h1>
+        </div>
+    </header>
+
+    <div class="container-custom">
+        <section class="reveal">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h2 class="card-title" style="font-size: 3rem; color: var(--primary-dark);">Our Plants Collection</h2>
+                <p class="text-muted">Explore our premium and wide variety of plants curated for your dream garden.</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">ALL</button>
+                <button class="filter-btn" data-filter="fruit">🍎 Fruit Plants</button>
+                <button class="filter-btn" data-filter="border">🌿 Border Plants</button>
+                <button class="filter-btn" data-filter="outdoor">🌳 Outdoor Plants</button>
+                <button class="filter-btn" data-filter="avenue">🌴 Avenue Plants</button>
+                <button class="filter-btn" data-filter="landscaping">🌱 Landscaping Plants</button>
+            </div>
+
+            <div class="plant-grid" id="plantGrid">
+                <!-- Fruit Plants (Range image copy 16 to 48 and extras) -->
+                <!-- Note: I will generate sample cards for the main varieties mentioned -->
+                <script>
+                    const fruitNames = [
+                        "Avocado", "Barbados Cherry", "Bread Fruit", "Egg Fruit", "White Neredu", 
+                        "Cotton Neredu", "Market Lemon", "Sweet Lemon", "Thai Patti Lemon", "Thai Patti Lime", 
+                        "Citrus Naranja", "Dragon Fruit", "Longan Pink", "Longan", "Water Apple", 
+                        "Rose Apple", "Malayan Apple", "Manila Cherry", "Fruit Plant",
+                        "Sapota", "Chiku White", "Jalpai Fruit", "Noni Fruit", "Peanut Butter Fruit", 
+                        "Apricot", "Macadamia", "Madhipalam", "Star Fruit", "Lipote", 
+                        "Anjura", "Thailand Pink Guava", "Rudra Guava", "Dwarf Banana"
+                    ];
+                    
+                    const avenueNames = ["Mahagani", "Tabebuia Rosea", "Jacaranda", "Peltophorum", "Marri", "Nallamadhi", "Bahunia", "Spathodia", "Kadhamba", "Badham", "Gulmohar", "Neem"];
+                    
+                    const landscapeNames = ["Black Ficus", "Panda Ficus", "Terminalya Green", "Terminalya White", "Foxtail Palm", "Mirchi Meri Green", "Terminalya Red", "Mirchi Meri Gold", "Redar Mirchira", "Golden Shower", "Royal Palm", "Areca Palm", "Traveller Palm", "Date Palm", "Fishtail Palm"];
+
+                    const grid = document.getElementById('plantGrid');
+                    
+                    // Fruit Plants (image copy 16 - 48)
+                    for (let i = 16; i <= 48; i++) {
+                        const name = fruitNames[i - 16] || `Fruit Plant ${i}`;
+                        const html = `
+                            <article class="card-premium plant-item reveal" data-category="fruit">
+                                <div class="card-img-wrapper"><img src="image copy ${i}.png" alt="${name}"></div>
+                                <div class="card-body">
+                                    <h3 class="card-title">${name}</h3>
+                                    <p class="card-subtitle">Fruit Plants</p>
+                                    <a href="https://wa.me/6302131036" class="btn-whatsapp-small">Get Quote on WhatsApp</a>
+                                </div>
+                            </article>`;
+                        grid.innerHTML += html;
+                    }
+
+                    // Extra Fruit Plants
+                    const extraFruit = ["f122.jpg", "f138.jpg", "f140.jpg", "f183.jpg", "f185.jpg", "f186.jpg", "f187.jpg", "f189.jpg"];
+                    extraFruit.forEach(img => {
+                        grid.innerHTML += `
+                            <article class="card-premium plant-item reveal" data-category="fruit">
+                                <div class="card-img-wrapper"><img src="${img}" alt="Fruit Plant"></div>
+                                <div class="card-body">
+                                    <h3 class="card-title">Fruit Plant Variety</h3>
+                                    <p class="card-subtitle">Fruit Plants</p>
+                                    <a href="https://wa.me/6302131036" class="btn-whatsapp-small">Get Quote on WhatsApp</a>
+                                </div>
+                            </article>`;
+                    });
+
+                    // Border Plants (image copy, image copy 2-15)
+                    grid.innerHTML += `
+                        <article class="card-premium plant-item reveal" data-category="border">
+                            <div class="card-img-wrapper"><img src="image copy.png" alt="Border Plant"></div>
+                            <div class="card-body">
+                                <h3 class="card-title">Border Plant</h3>
+                                <p class="card-subtitle">Landscaping Border Plants</p>
+                                <a href="https://wa.me/6302131036" class="btn-whatsapp-small">Get Quote on WhatsApp</a>
+                            </div>
+                        </article>`;
+                    for (let i = 2; i <= 15; i++) {
+                        grid.innerHTML += `
+                            <article class="card-premium plant-item reveal" data-category="border">
+                                <div class="card-img-wrapper"><img src="image copy ${i}.png" alt="Border Plant"></div>
+                                <div class="card-body">
+                                    <h3 class="card-title">Border Plant Variety</h3>
+                                    <p class="card-subtitle">Landscaping Border Plants</p>
+                                    <a href="https://wa.me/6302131036" class="btn-whatsapp-small">Get Quote on WhatsApp</a>
+                                </div>
+                            </article>`;
+                    }
+
+                    // Outdoor Plants (fi1 - fi25)
+                    for (let i = 1; i <= 25; i++) {
+                        grid.innerHTML += `
+                            <article class="card-premium plant-item reveal" data-category="outdoor">
+                                <div class="card-img-wrapper"><img src="fi${i}.jpg" alt="Outdoor Plant"></div>
+                                <div class="card-body">
+                                    <h3 class="card-title">Outdoor Plant</h3>
+                                    <p class="card-subtitle">Outdoor Plants</p>
+                                    <a href="https://wa.me/6302131036" class="btn-whatsapp-small">Get Quote on WhatsApp</a>
+                                </div>
+                            </article>`;
+                    }
+
+                    // Avenue Plants (a1 - a12)
+                    for (let i = 1; i <= 12; i++) {
+                        const name = avenueNames[i-1] || "Avenue Plant";
+                        grid.innerHTML += `
+                            <article class="card-premium plant-item reveal" data-category="avenue">
+                                <div class="card-img-wrapper"><img src="a${i}.jpg" alt="${name}"></div>
+                                <div class="card-body">
+                                    <h3 class="card-title">${name}</h3>
+                                    <p class="card-subtitle">Avenue Plants</p>
+                                    <a href="https://wa.me/6302131036" class="btn-whatsapp-small">Get Quote on WhatsApp</a>
+                                </div>
+                            </article>`;
+                    }
+
+                    // Landscaping Plants (scape1 - scape15)
+                    for (let i = 1; i <= 15; i++) {
+                        const name = landscapeNames[i-1] || "Landscaping Plant";
+                        grid.innerHTML += `
+                            <article class="card-premium plant-item reveal" data-category="landscaping">
+                                <div class="card-img-wrapper"><img src="scape${i}.jpg" alt="${name}"></div>
+                                <div class="card-body">
+                                    <h3 class="card-title">${name}</h3>
+                                    <p class="card-subtitle">Landscaping Plants</p>
+                                    <a href="https://wa.me/6302131036" class="btn-whatsapp-small">Get Quote on WhatsApp</a>
+                                </div>
+                            </article>`;
+                    }
+                </script>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer same as index.html -->
+    <footer>
+        <div class="container-custom">
+            <div class="footer-grid">
+                <div>
+                    <img src="image copy 49.png" alt="Logo" class="footer-logo">
+                    <h3 class="brand-name" style="color: white; margin-bottom: 15px;">Rohit Gardens</h3>
+                    <p class="footer-desc">Premium nursery offering high-quality plants, landscaping solutions, and expert gardening services to create beautiful green spaces.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="plants.html">Our Plants</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="plants.html">Fruit Plants</a></li>
+                        <li><a href="plants.html">Landscaping</a></li>
+                        <li><a href="plants.html">Outdoor Plants</a></li>
+                        <li><a href="plants.html">Avenue Plants</a></li>
+                        <li><a href="about.html">Garden Maintenance</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Contact</h4>
+                    <p class="footer-links" style="color: rgba(255,255,255,0.8);">
+                        📍 Rohit Gardens, Burrilanka<br><br>
+                        📞 6302131036<br>
+                        📞 6305942432
+                    </p>
+                    <a href="https://wa.me/6302131036" class="btn-quote" style="display: block; text-align: center; margin-top: 20px;">Chat on WhatsApp</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Rohit Gardens. All Rights Reserved. | <span style="color: var(--accent-green);">Designed with 🌿 for Nature Lovers</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/6302131036" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>

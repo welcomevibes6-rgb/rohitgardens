@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Rohit Gardens</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 50px;
+        }
+        .info-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: var(--shadow-soft);
+        }
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-bottom: 20px;
+            transition: var(--transition-smooth);
+            justify-content: center;
+        }
+        .btn-whatsapp-full { background: #25d366; color: white; }
+        .btn-call-full { border: 2px solid var(--primary-green); color: var(--primary-green); }
+        .btn-quote-full { background: var(--primary-green); color: white; }
+
+        .btn-whatsapp-full:hover { background: #128c7e; transform: scale(1.02); }
+        .btn-call-full:hover { background: var(--primary-green); color: white; }
+        .btn-quote-full:hover { background: var(--primary-dark); }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border-radius: 12px;
+            border: 1px solid #ddd;
+            font-family: inherit;
+            outline: none;
+            transition: var(--transition-smooth);
+        }
+        input:focus, textarea:focus {
+            border-color: var(--primary-green);
+            box-shadow: 0 0 10px rgba(46, 125, 50, 0.1);
+        }
+        .map-container {
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            height: 100%;
+            min-height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="custom-cursor"></div>
+
+    <nav class="nav-wrapper">
+        <div class="logo-section">
+            <img src="image copy 49.png" alt="Logo" class="logo-img">
+            <span class="brand-name">Rohit Gardens</span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="plants.html">Our Plants</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html" class="active">Contact Us</a></li>
+        </ul>
+        <a href="contact.html" class="btn-quote">Get a Quote</a>
+    </nav>
+
+    <header class="page-banner">
+        <div class="banner-bg"></div>
+        <div class="banner-content">
+            <h1 class="banner-title">Contact Us</h1>
+        </div>
+    </header>
+
+    <div class="container-custom">
+        <section class="reveal">
+            <div class="contact-grid">
+                <div>
+                    <h2 class="card-title" style="font-size: 2.5rem; margin-bottom: 30px;">Get in Touch with Rohit Gardens</h2>
+                    <div class="info-card">
+                        <p class="text-muted" style="margin-bottom: 30px;">
+                            We are here to help you create your perfect green sanctuary. Reach out to us via any of the channels below.
+                        </p>
+                        
+                        <div style="margin-bottom: 40px;">
+                            <p style="font-weight: 700; margin-bottom: 10px; color: var(--primary-green);"><i class="fas fa-phone-alt"></i> PHONE NUMBERS</p>
+                            <p style="font-size: 1.2rem; font-weight: 600;">6302131036, 6305942432</p>
+                            <br>
+                            <p style="font-weight: 700; margin-bottom: 10px; color: var(--primary-green);"><i class="fas fa-map-marker-alt"></i> OUR LOCATION</p>
+                            <p style="font-size: 1.2rem; font-weight: 600;">Rohit Gardens, Burrilanka</p>
+                        </div>
+
+                        <a href="https://wa.me/6302131036" class="contact-btn btn-whatsapp-full">
+                            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                        </a>
+                        <a href="tel:6302131036" class="contact-btn btn-call-full">
+                            <i class="fas fa-phone-alt"></i> Call Us Directly
+                        </a>
+                        <a href="#contactForm" class="contact-btn btn-quote-full">
+                           <i class="fas fa-file-invoice"></i> Get a Personal Quote
+                        </a>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15263!2d81.7!3d16.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a309...!" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section id="contactForm" class="reveal" style="max-width: 800px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h2 class="card-title" style="font-size: 3rem;">Send a Message</h2>
+                <p class="text-muted">Fill out the form below and ours experts will get back to you shortly.</p>
+            </div>
+            <div class="info-card">
+                <form>
+                    <div class="form-group">
+                        <label style="display: block; margin-bottom: 10px; font-weight: 600;">Full Name</label>
+                        <input type="text" placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label style="display: block; margin-bottom: 10px; font-weight: 600;">Phone Number</label>
+                        <input type="tel" placeholder="Enter your phone number">
+                    </div>
+                    <div class="form-group">
+                        <label style="display: block; margin-bottom: 10px; font-weight: 600;">Your Message</label>
+                        <textarea rows="5" placeholder="How can we help you?"></textarea>
+                    </div>
+                    <button type="submit" class="btn-explore" style="width: 100%; border: none; cursor: pointer;">Submit Message</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer same as index.html -->
+    <footer>
+        <div class="container-custom">
+            <div class="footer-grid">
+                <div>
+                    <img src="image copy 49.png" alt="Logo" class="footer-logo">
+                    <h3 class="brand-name" style="color: white; margin-bottom: 15px;">Rohit Gardens</h3>
+                    <p class="footer-desc">Premium nursery offering high-quality plants, landscaping solutions, and expert gardening services to create beautiful green spaces.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="plants.html">Our Plants</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="plants.html">Fruit Plants</a></li>
+                        <li><a href="plants.html">Landscaping</a></li>
+                        <li><a href="plants.html">Outdoor Plants</a></li>
+                        <li><a href="plants.html">Avenue Plants</a></li>
+                        <li><a href="about.html">Garden Maintenance</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Contact</h4>
+                    <p class="footer-links" style="color: rgba(255,255,255,0.8);">
+                        📍 Rohit Gardens, Burrilanka<br><br>
+                        📞 6302131036<br>
+                        📞 6305942432
+                    </p>
+                    <a href="https://wa.me/6302131036" class="btn-quote" style="display: block; text-align: center; margin-top: 20px;">Chat on WhatsApp</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Rohit Gardens. All Rights Reserved. | <span style="color: var(--accent-green);">Designed with 🌿 for Nature Lovers</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/6302131036" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
