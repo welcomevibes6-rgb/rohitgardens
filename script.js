@@ -46,12 +46,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Mobile Hamburger Menu ---
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
+    const closeMenu = document.querySelector('.close-menu');
     const navLinks = document.querySelectorAll('.nav-menu li');
 
     if (hamburger && navMenu) {
         hamburger.addEventListener('click', () => {
             // Toggle Nav
-            navMenu.classList.toggle('nav-active');
+            navMenu.classList.add('nav-active');
             
             // Animate Links
             navLinks.forEach((link, index) => {
@@ -63,8 +64,15 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             // Hamburger Animation
-            hamburger.classList.toggle('toggle');
+            hamburger.classList.add('toggle');
         });
+
+        if (closeMenu) {
+            closeMenu.addEventListener('click', () => {
+                navMenu.classList.remove('nav-active');
+                hamburger.classList.remove('toggle');
+            });
+        }
 
         // Close menu when a link is clicked
         navLinks.forEach(link => {

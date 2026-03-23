@@ -615,16 +615,16 @@ footer::before {
     .nav-wrapper {
         top: 15px;
         width: 94%;
-        padding: 8px 20px;
+        padding: 8px 15px;
         border-radius: 50px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 10px;
+        gap: 8px;
     }
 
-    .logo-img { height: 32px; }
-    .brand-name { font-size: 1.1rem; }
+    .logo-img { height: 30px; }
+    .brand-name { font-size: 1.05rem; }
 
     .hamburger { 
         display: block; 
@@ -633,8 +633,8 @@ footer::before {
     }
 
     .btn-quote {
-        padding: 8px 16px;
-        font-size: 0.8rem;
+        padding: 8px 14px;
+        font-size: 0.75rem;
         order: 3;
     }
 
@@ -662,6 +662,23 @@ footer::before {
         opacity: 1;
     }
 
+    .close-menu {
+        display: block;
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        font-size: 1.8rem;
+        color: var(--primary-green);
+        cursor: pointer;
+        z-index: 3001;
+        transition: var(--transition-smooth);
+    }
+
+    .close-menu:hover {
+        transform: rotate(90deg);
+        color: var(--primary-dark);
+    }
+
     .menu-header {
         display: flex;
         flex-direction: column;
@@ -674,14 +691,24 @@ footer::before {
 
     .nav-menu ul {
         flex-direction: column;
-        gap: 20px;
+        gap: 15px;
         align-items: flex-start;
         padding: 0;
         width: 100%;
     }
 
     .nav-menu li { margin: 0; opacity: 1; transform: none; }
-    .nav-menu a { font-size: 1.4rem; padding: 10px 0; width: 100%; }
+    .nav-menu a { font-size: 1.3rem; padding: 10px 0; width: 100%; }
+
+    /* Hero Background Fix Mobile */
+    .hero-home { 
+        height: 75vh;
+        min-height: 450px;
+    }
+    .hero-bg-slide {
+        background-size: cover;
+        background-position: center center;
+    }
 
     /* About Section Overlap Fix */
     .about-layout {
@@ -702,19 +729,51 @@ footer::before {
         position: static;
         width: 100%;
         height: auto;
-        max-height: 300px;
+        max-height: 280px;
         border-radius: 20px;
         border: none;
         box-shadow: var(--shadow-soft);
     }
 
+    /* Footer Mobile Fix */
+    footer {
+        padding: 60px 20px 30px;
+        text-align: center;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+    .footer-desc {
+        max-width: 100%;
+        margin: 0 auto;
+        line-height: 1.8;
+    }
+    .footer-title {
+        margin-bottom: 20px;
+        font-size: 1.4rem;
+    }
+    .footer-links li {
+        margin-bottom: 12px;
+    }
+    .footer-links a {
+        display: block;
+        padding: 5px 0;
+        font-size: 1.1rem;
+    }
+    .footer-bottom {
+        margin-top: 50px;
+        padding-top: 25px;
+        font-size: 0.85rem;
+    }
+
     /* General Spacing, Typography & Images */
-    section { padding: 40px 15px; }
+    section { padding: 45px 15px; }
     .container-custom { padding: 0 15px; }
     
-    .section-preview { padding: 25px; margin: 30px 15px; }
+    .section-preview { padding: 30px 20px; margin: 30px 0; }
 
-    .hero-title { font-size: 2.5rem; margin-top: 15px; }
+    .hero-title { font-size: 2.2rem; margin-top: 15px; line-height: 1.2; }
     .hero-subtext { font-size: 0.8rem; letter-spacing: 2px; }
 
     .btn-explore {
@@ -730,19 +789,22 @@ footer::before {
         left: auto;
         width: 55px;
         height: 55px;
+        z-index: 2100;
     }
 
     img { border-radius: 12px; }
-    .card-premium { border-radius: 15px; overflow: hidden; margin-bottom: 25px; }
-    .preview-grid { grid-template-columns: 1fr; gap: 20px; }
+    .card-premium { border-radius: 18px; margin-bottom: 30px; }
+    .preview-grid { grid-template-columns: 1fr; gap: 25px; }
 }
 
 @media (max-width: 480px) {
-    .nav-wrapper { padding: 8px 15px; gap: 8px; }
-    .brand-name { display: none; }
+    .nav-wrapper { padding: 8px 12px; gap: 6px; }
+    .logo-img { height: 28px; }
+    .brand-name { font-size: 0.95rem; }
+    .btn-quote { padding: 6px 12px; font-size: 0.7rem; }
 }
 
-/* Custom Cursor */
+/* Custom Cursor - Disable on mobile */
 .custom-cursor {
     width: 20px;
     height: 20px;
