@@ -149,7 +149,7 @@
                             </article>`;
                     });
 
-                    // Border Plants (image copy, image copy 2-15)
+                    // Border Plants (image copy, image copy 2-15, 52, 53)
                     grid.innerHTML += `
                         <article class="card-premium plant-item reveal" data-category="border">
                             <div class="card-img-wrapper"><img src="image copy.png" alt="Border Plant"></div>
@@ -159,7 +159,8 @@
                                 <a href="https://wa.me/6302131036" class="btn-whatsapp-small">Get Quote on WhatsApp</a>
                             </div>
                         </article>`;
-                    for (let i = 2; i <= 15; i++) {
+                    const borderImages = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 52, 53];
+                    borderImages.forEach(i => {
                         grid.innerHTML += `
                             <article class="card-premium plant-item reveal" data-category="border">
                                 <div class="card-img-wrapper"><img src="image copy ${i}.png" alt="Border Plant"></div>
@@ -169,7 +170,7 @@
                                     <a href="https://wa.me/6302131036" class="btn-whatsapp-small">Get Quote on WhatsApp</a>
                                 </div>
                             </article>`;
-                    }
+                    });
 
                     // Outdoor Plants (fi1 - fi25)
                     for (let i = 1; i <= 25; i++) {
@@ -187,9 +188,12 @@
                     // Avenue Plants (a1 - a12)
                     for (let i = 1; i <= 12; i++) {
                         const name = avenueNames[i-1] || "Avenue Plant";
+                        let imgSrc = `a${i}.jpg`;
+                        if (i === 6) imgSrc = "image copy 56.png";
+                        
                         grid.innerHTML += `
                             <article class="card-premium plant-item reveal" data-category="avenue">
-                                <div class="card-img-wrapper"><img src="a${i}.jpg" alt="${name}"></div>
+                                <div class="card-img-wrapper"><img src="${imgSrc}" alt="${name}"></div>
                                 <div class="card-body">
                                     <h3 class="card-title">${name}</h3>
                                     <p class="card-subtitle">Avenue Plants</p>
@@ -201,9 +205,13 @@
                     // Landscaping Plants (scape1 - scape15)
                     for (let i = 1; i <= 15; i++) {
                         const name = landscapeNames[i-1] || "Landscaping Plant";
+                        let imgSrc = `scape${i}.jpg`;
+                        if (i === 2) imgSrc = "image copy 54.png";
+                        if (i === 8) imgSrc = "image copy 55.png";
+
                         grid.innerHTML += `
                             <article class="card-premium plant-item reveal" data-category="landscaping">
-                                <div class="card-img-wrapper"><img src="scape${i}.jpg" alt="${name}"></div>
+                                <div class="card-img-wrapper"><img src="${imgSrc}" alt="${name}"></div>
                                 <div class="card-body">
                                     <h3 class="card-title">${name}</h3>
                                     <p class="card-subtitle">Landscaping Plants</p>
